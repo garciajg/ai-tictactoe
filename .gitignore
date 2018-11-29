@@ -1,2 +1,5 @@
-# Byte-compiled
+# Byte-compiled / optimzed/ DDL files
 __pycache__/
+*.py[cod]
+*$py.class
+*.pyc
