@@ -1,8 +1,8 @@
 def displayBoard(board):
+    print("     |     |") # There's 5 spaces in between lines
+    print("  {0}  |  {1}  |  {2}  |".format(board[0], board[1], board[2])) # there's two spaces before and after the mark
     print("     |     |")
-    print("  {0}  |  {1}  |  {2}  |".format(board[0], board[1], board[2]))
-    print("     |     |")
-    print("-----------------")
+    print("-----------------") # 12  dashes total
     print("     |     |")
     print("  {0}  |  {1}  |  {2}  |".format(board[3], board[4], board[5]))
     print("     |     |")
@@ -12,6 +12,12 @@ def displayBoard(board):
     print("     |     |")
 
 def checkWin(board, marker):
+    """
+    This method cheack if any player has won the game by
+    checking each row from left to right,
+    each column from top to bottom, and 
+    from corner to corner.
+    """
     return (
                 (board[0] == marker and board[1] == marker and board[2] == marker) or # Vertical line top
                 (board[3] == marker and board[4] == marker and board[5] == marker) or # Vertical line middle
@@ -24,15 +30,8 @@ def checkWin(board, marker):
             )
 
 def checkDraw(board):
+    """
+    Checks for any blank spaces when no player has won yet
+    """
     return " " not in board
-
-# def testForkMove(b, mark, i):
-#     """
-#     Determines if a move opens up a fork
-#     """
-#     b_copy = getBoardCopy(b)
-#     b_copy[i] = mark
-#     winningMoves = 0
-#     for j in range(0, 9):
-#         if testWinMove(b_copy, mark, j) and b_copy[j] == " ":
     
